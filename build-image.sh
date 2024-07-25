@@ -1,13 +1,10 @@
 #!/bin/bash
 
 # Update packages and install security patches
-sudo yum update -y
-
-# Install Docker
-sudo amazon-linux-extras install docker -y
+sudo apt-get update -y
 
 # Start Docker daemon
-sudo service docker start
+sudo systemctl start docker
 
 # Enable Docker daemon to start at boot
 sudo systemctl enable docker
@@ -19,10 +16,10 @@ sudo usermod -a -G docker ec2-user
 docker build -t king-httpd-2 .
 
 # Tag the image
-docker tag king-httpd-2 josh1991/king-httpd-2
+docker tag king-httpd-2 tyzxnr/king-httpd-2
 
 # Login to Docker Hub using environment variables
 echo $DOCKER_PASSWORD | docker login --username $DOCKER_USERNAME --password-stdin
 
 # Push the image to Docker Hub
-docker push josh1991/king-httpd-2
+docker push tyzxnr/king-httpd-2
