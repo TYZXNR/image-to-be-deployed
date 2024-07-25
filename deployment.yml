@@ -59,13 +59,13 @@
 
     - name: Pull image from Docker Hub
       docker_image:
-        name: josh1991/king-httpd-2
+        name: tyzxnr/king-httpd-2
         source: pull
 
     - name: Run Docker container
       docker_container:
         name: king-httpd-container-2
-        image: josh1991/king-httpd-2
+        image: tyzxnr/king-httpd-2
         state: started
         ports:
           - "{{ docker_port }}:8080"
