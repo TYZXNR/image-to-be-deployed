@@ -1,6 +1,6 @@
 aws:
   hosts:
-    Front_end:
-      ansible_host: 18.218.36.73
-      ansible_ssh_private_key_file: /home/ec2-user/image-to-be-deployed/deploy.pem
+    web_server:
+      ansible_host: 3.145.154.244
+      ansible_ssh_private_key_file: /home/ubuntu/tyz-1.pem
       ansible_user: ubuntu
